@@ -22,3 +22,17 @@ jobs:
           directory: ./kestra/flows
           resource: flow
           server: https://639c-196-21-91-2.ngrok-free.app
+  deploy: 
+    runs-on: ubuntu-latest
+    name: Kestra deploy
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v4
+
+      - name: Deploy flows
+        uses: kestra-io/deploy-action@master
+        with:
+          namespace: company.team
+          directory: ./kestra/flows
+          resource: flow
+          server: https://639c-196-21-91-2.ngrok-free.app
