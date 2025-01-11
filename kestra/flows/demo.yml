@@ -1,6 +1,6 @@
 id: demo
 namespace: company.team
-description: Hello World
+description: Hello Koomi
 
 tasks:
   - id: hello
