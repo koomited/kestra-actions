@@ -1,0 +1,8 @@
+id: demo
+namespace: company.team
+description: Hello World
+
+tasks:
+  - id: hello
+    type: io.kestra.plugin.core.log.Log
+    message: Hello World!
