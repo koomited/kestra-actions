@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Kestra CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  validate: 
+    runs-on: ubuntu-latest
+    name: Kestra validate
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v4
+
+      - name: Validate all flows on the server side
+        uses: kestra-io/validate-action@master
+        with:
+          directory: ./kestra/flows
+          ressource: flow
+          server: https://639c-196-21-91-2.ngrok-free.app
